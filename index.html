@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .letters{
+            background-color: rgb(0, 55, 255);
+            color: white;
+            border-radius: 30%;
+            padding: 12px;
+            margin: 2px;
+        }
+        .abc{
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .button{
+            display: flex;
+            justify-content: center;   
+        }
+        .box{
+            background-color: rgb(157, 212, 247);
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Találd ki a szót</h1>
+    <div class="button">
+        <button type="button">start!</button>
+    </div>
+    <div class="boxes">
+        
+    </div>
+    <div class="abc"></div>
+    <script src="words.js"></script>
+    <script>
+        /*const str =  'gzrsubhioídjnldkévbsjfdnvpousjfbvojsdvbJSDBVdbv'
+        console.log(Array.from(str));
+        console.log(str[3],str.split(''));
+        const diak={nev:'Gyula',kor:20}
+        //let nev = diak.nev
+        //let kor=diak.kor
+        //destrukturáló szintaxis:
+        let {nev,kor} = diak
+        console.log(nev,kor);
+        const arr=[1212,25235]
+        let {nr1,nr2} = arr
+        console.log(nr1,nr2);*/
+
+
+        /*let selectedLetter=domObj.textcontent
+        let cardNodeList=document.querySelectorAll('.card')
+        cardNodeList.forEach((item, index)=>{
+            if(str[index] == selectedLetter) item.textContent=selectedLetter
+        })*/
+        const AbcSplit = abc.split("")
+        AbcSplit.forEach((item)=>{
+            document.querySelector(".abc").innerHTML += `<div class="letters" type="button">${item}</div>`
+        })
+
+        function start(){
+            const randIndex=Math.floor(Math.random() * words.length)
+            randWord=words[randIndex]
+            console.log(randWord.length);
+
+        }
+        function displayBoxes(obj){
+            start()
+            randWord.split("").forEach((obj)=>{
+                document.querySelector(".boxes").innerHTML += `<div class="box">${obj}</div>`
+            })
+        }
+    </script>
+</body>
+</html>
